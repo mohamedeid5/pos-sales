@@ -19,7 +19,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
     @include('layouts.navbar')
     @include('layouts.sidebar')
 
-    @yield('content')
+    <div class="content-wrapper">
+        @include('admin.includes.errors')
+        @yield('content')
+    </div>
+
 </div>
 
 
