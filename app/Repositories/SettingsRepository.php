@@ -6,23 +6,25 @@ use App\Http\Controllers\Admin\Uploader;
 use App\Http\Requests\Admin\SettingsRequest;
 use App\Interfaces\SettingsRepositoryInterface;
 use App\Models\Setting;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\DB;
+use Illuminate\View\View;
 
 class SettingsRepository implements SettingsRepositoryInterface
 {
 
-    public function index()
+    public function index(): View
     {
         $collection = Setting::all();
 
-        $settings = $collection->flatMap(function ($values){
-             return [$values->key => $values->value];
+         $settings = $collection->flatMap(function ($values){
+             return [$values->key => $values->value, 'updated_at' => $values->updated_at];
          });
 
         return view('admin.settings.index', compact('settings'));
     }
 
-    public function edit()
+    public function edit(): View
     {
         $collection = Setting::all();
 
@@ -33,10 +35,12 @@ class SettingsRepository implements SettingsRepositoryInterface
         return view('admin.settings.edit', compact('settings'));
     }
 
-    public function update(SettingsRequest $request)
+    public function update(SettingsRequest $request): RedirectResponse
     {
 
         DB::beginTransaction();
+
+        $oldImage = Setting::where('key', 'image')->first();
 
         try {
 
@@ -49,8 +53,9 @@ class SettingsRepository implements SettingsRepositoryInterface
             Setting::where('key', 'added_by')->update(['value' => auth()->user()->name]);
 
             if ($request->image) {
-                Setting::where('key', 'image')->update(['value' => $request->image->getClientOriginalName()]);
-                Uploader::upload($request, 'admin/settings');
+                Setting::where('key', 'image')->update(['value' => Uploader::upload($request, 'admin/settings')]);
+                Uploader::deleteFile('admin/settings/' . $oldImage->value);
+
             }
 
             DB::commit();

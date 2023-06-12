@@ -14,4 +14,13 @@
 <!-- AdminLTE App -->
 <script src="{{ URL::asset('assets/dist/js/adminlte.min.js') }}"></script>
 
+<script src="{{ URL::asset('assets/plugins/datatables/jquery.dataTables.js') }}"></script>
+<script src="{{ URL::asset('assets/plugins/datatables-bs4/js/dataTables.bootstrap4.js') }}"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="{{ URL::asset('assets/dist/js/demo.js') }}"></script>
+<script>
+    $(function () {
+        $("#example1").DataTable();
+    });
+</script>
 @yield('js')

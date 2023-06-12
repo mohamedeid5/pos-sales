@@ -52,6 +52,10 @@
             @enderror
             <br>
 
+            <img src="{{ Storage::url('admin/settings/' . $settings['image']) }}" alt="Image description">
+
+            <br>
+
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>

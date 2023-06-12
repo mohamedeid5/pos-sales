@@ -20,6 +20,7 @@
                                 <th>phone</th>
                                 <th>status</th>
                                 <th>added by</th>
+                                <th>last update</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -29,6 +30,7 @@
                                 <td>{{ $settings['phone'] }}</td>
                                 <td>{{ $settings['status'] == 1 ? 'active' : 'inactive' }}</td>
                                 <td>{{ $settings['added_by'] }}</td>
+                                <td>{{ $settings['updated_at'] }}</td>
                             </tr>
                             </tbody>
                         </table>

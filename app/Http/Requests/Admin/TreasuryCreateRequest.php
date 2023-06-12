@@ -4,7 +4,7 @@ namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class SettingsRequest extends FormRequest
+class TreasuryCreateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -21,12 +21,15 @@ class SettingsRequest extends FormRequest
      */
     public function rules(): array
     {
+
+        $id = request('id');
+
         return [
-            'system_name' => 'required',
-            'image' => 'required|sometimes|image|mimes:png,jpg,jpeg',
-            'status' => 'required',
-            'address' => 'required',
-            'phone' => 'required|numeric',
+            'name' => 'required|unique:treasuries,name,'.$id,
+            'is_master' => 'required|integer|in:1,0',
+            'status' => 'required|integer|in:1,0',
+            'last_exchange_receipt' => 'required|numeric',
+            'last_collection_receipt' => 'required|numeric',
         ];
     }
 }

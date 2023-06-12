@@ -29,7 +29,15 @@
                         <i class="nav-icon fas fa-th"></i>
                         <p>
                             Settings
-                            <span class="right badge badge-danger">New</span>
+                        </p>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{ route('admin.treasuries.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            Treasuries
                         </p>
                     </a>
                 </li>
