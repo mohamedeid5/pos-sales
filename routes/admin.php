@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\Auth\LoginController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\SalesMaterialTypes\SalesMaterialTypesController;
 use App\Http\Controllers\Admin\Settings\SettingsController;
 use App\Http\Controllers\Admin\Treasuries\TreasuriesController;
 use Illuminate\Support\Facades\Route;
@@ -35,6 +36,9 @@ Route::group(['prefix'=>'admin', 'as' => 'admin.', 'middleware' => 'auth:admin']
         ->name('treasuries.add.treasury.delivery.store');
     Route::delete('treasuries/add-treasury-delivery/{id}', [TreasuriesController::class, 'deleteTreasuryDelivery'])
         ->name('treasuries.add.treasury.delivery.delete');
+
+    // sales material types
+    Route::resource('sales-material-types', SalesMaterialTypesController::class);
 });
 
 

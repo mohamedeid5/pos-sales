@@ -32,12 +32,25 @@
                         </p>
                     </a>
                 </li>
+            </ul>
 
-                <li>
+
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <li class="nav-item">
                     <a href="{{ route('admin.treasuries.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-th"></i>
                         <p>
                             Treasuries
+                        </p>
+                    </a>
+                </li>
+            </ul>
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <li class="nav-item">
+                    <a href="{{ route('admin.sales-material-types.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            Sales Material Types
                         </p>
                     </a>
                 </li>

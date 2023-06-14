@@ -41,10 +41,10 @@
                         <td>{{ $treasury->created_at }}</td>
                         <td>{{ $treasury->updated_at }}</td>
                         <td>
-                            <a href="{{ route('admin.treasuries.edit', $treasury->id) }}"  class="btn btn-primary">edit</a>
-                            <a href="{{ route('admin.treasuries.show', $treasury->id) }}"  class="btn btn-primary">details</a>
+                            <a href="{{ route('admin.treasuries.edit', $treasury->id) }}"  class="btn btn-sm btn-primary">edit</a>
+                            <a href="{{ route('admin.treasuries.show', $treasury->id) }}"  class="btn btn-sm btn-primary">details</a>
 
-                            <button type="button" class="btn btn-danger" data-toggle="modal" style="display: inline-block;" data-target="#deleteModal{{ $treasury->id }}">Delete</button>
+                            <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" style="display: inline-block;" data-target="#deleteModal{{ $treasury->id }}">Delete</button>
                         </td>
 
                     </tr>
