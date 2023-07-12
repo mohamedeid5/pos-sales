@@ -14,7 +14,7 @@ class Uploader extends Controller
         $fileName = $file->getClientOriginalName();
 
         $extension = $file->extension();
-        $fileName = time().rand(100,999) . '.' . $extension;
+        $fileName = time().rand(100,999) . '-' . $fileName;
 
         // Upload file
         $request->file('image')->storeAs($targetDir, $fileName);

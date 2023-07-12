@@ -13,7 +13,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 </head>
 
-<body>
+<body class="sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed" style="height: auto;">
 <div class="wrapper">
 
     @include('layouts.navbar')

@@ -39,9 +39,11 @@ class LoginController extends Controller
 
     public function login(LoginRequest $request)
     {
-        $credentials = $request->only('email', 'password');
 
-        if (auth()->guard('admin')->attempt($credentials)) {
+        $credentials = $request->only('email', 'password');
+        $remember = $request->remember;
+
+        if (auth()->guard('admin')->attempt($credentials, $remember)) {
             return redirect()->intended();
         }
 

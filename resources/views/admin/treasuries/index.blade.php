@@ -15,7 +15,7 @@
                 <thead>
                 <tr>
                     <th>#</th>
-                    <th>Treasure Name</th>
+                    <th>Name</th>
                     <th>master</th>
                     <th>status</th>
                     <th>last exchange receipt</th>
@@ -55,7 +55,7 @@
                 <tfoot>
                 <tr>
                     <th>#</th>
-                    <th>Treasure Name</th>
+                    <th>Name</th>
                     <th>master</th>
                     <th>status</th>
                     <th>last exchange receipt</th>

@@ -2,9 +2,13 @@
 
 use App\Http\Controllers\Admin\Auth\LoginController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\ItemCards\ItemCardsController;
+use App\Http\Controllers\Admin\ItemCategories\ItemCategoriesController;
 use App\Http\Controllers\Admin\SalesMaterialTypes\SalesMaterialTypesController;
 use App\Http\Controllers\Admin\Settings\SettingsController;
+use App\Http\Controllers\Admin\Stores\StoresController;
 use App\Http\Controllers\Admin\Treasuries\TreasuriesController;
+use App\Http\Controllers\Admin\Uoms\UomsController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -39,6 +43,18 @@ Route::group(['prefix'=>'admin', 'as' => 'admin.', 'middleware' => 'auth:admin']
 
     // sales material types
     Route::resource('sales-material-types', SalesMaterialTypesController::class);
+
+    // stores routes
+    Route::resource('stores', StoresController::class);
+
+    // uoms routes
+    Route::resource('uoms', UomsController::class);
+
+    // item-categories routes
+    Route::resource('item-categories', ItemCategoriesController::class);
+
+    // item-categories routes
+    Route::resource('item-cards', ItemCardsController::class);
 });
 
 

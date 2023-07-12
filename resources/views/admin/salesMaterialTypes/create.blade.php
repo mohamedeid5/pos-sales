@@ -18,10 +18,10 @@
                         <input type="text" name="name" value="{{ old('name') }}" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label for="select-box">Select Box</label>
+                        <label for="select-box">Status</label>
                         <select class="form-control" name="status" id="select-box">
                             <option value="1">active</option>
-                            <option value="1">inactive</option>
+                            <option value="0">inactive</option>
                         </select>
                     </div>
                     <button class="btn btn-primary">Add</button>

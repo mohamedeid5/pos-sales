@@ -8,5 +8,6 @@
 <link rel="stylesheet" href="{{ URL::asset('assets/css/bootstrap-v4.2.1/bootstrap.min.css') }}">
 <link rel="stylesheet" href="{{ URL::asset('assets/css/bootstrap-v4.2.1/custom_rtl.css') }}">
 <link rel="stylesheet" href="{{ URL::asset('assets/css/mycustomstyle.css') }}">
+<link rel="stylesheet" href="{{ URL::asset('assets/css/main.css') }}">
 
 @yield('css')

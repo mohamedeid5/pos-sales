@@ -67,6 +67,9 @@
                 @error('password')
                 <span class="text-danger">{{ $message }}</span>
                 @enderror
+                <label for="remember">
+                    <input type="checkbox" id="remember" name="remember"> Remember me
+                </label>
                 <div class="row">
                     <!-- /.col -->
                     <div class="col-12">
