@@ -30,7 +30,7 @@ class ItemCardsRepository implements ItemCardsRepositoryInterface
         return view('admin.item_cards.create', compact('itemCategories', 'uoms','subUoms'));
     }
 
-    public function storeItemCard(ItemCardsRequest $request)
+    public function storeItemCard(ItemCardsRequest $request): RedirectResponse
     {
 
         $lastItem = ItemCard::latest()->first();

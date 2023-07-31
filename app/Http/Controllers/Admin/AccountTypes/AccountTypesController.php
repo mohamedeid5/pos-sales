@@ -1,17 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Uoms;
+namespace App\Http\Controllers\Admin\AccountTypes;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\UomsRequest;
-use App\Interfaces\UomsRepositoryInterface;
-use App\Models\Uom;
+use App\Interfaces\AccountTypesRepositoryInterface;
 use Illuminate\Http\Request;
 
-class UomsController extends Controller
+class AccountTypesController extends Controller
 {
 
-    public function __construct(protected UomsRepositoryInterface $uomsRepository)
+
+    public function __construct(protected AccountTypesRepositoryInterface $accountTypesRepository)
     {
     }
 
@@ -20,7 +19,7 @@ class UomsController extends Controller
      */
     public function index()
     {
-        return $this->uomsRepository->allUoms();
+        return $this->accountTypesRepository->allAccountTypes();
     }
 
     /**
@@ -28,15 +27,15 @@ class UomsController extends Controller
      */
     public function create()
     {
-        return $this->uomsRepository->createUoms();
+        //
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(UomsRequest $request)
+    public function store(Request $request)
     {
-        return $this->uomsRepository->storeUoms($request);
+        //
     }
 
     /**
@@ -50,17 +49,17 @@ class UomsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Uom $uom)
+    public function edit(string $id)
     {
-        return $this->uomsRepository->editUoms($uom);
+        //
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UomsRequest $request, string $id)
+    public function update(Request $request, string $id)
     {
-        return $this->uomsRepository->updateUoms($request, $id);
+        //
     }
 
     /**
@@ -68,6 +67,6 @@ class UomsController extends Controller
      */
     public function destroy(string $id)
     {
-        return $this->uomsRepository->deleteUoms($id);
+        //
     }
 }

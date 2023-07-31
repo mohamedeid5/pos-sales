@@ -10,11 +10,9 @@ use Illuminate\Http\Request;
 class SalesMaterialTypesController extends Controller
 {
 
-    protected SalesMaterialTypesInterface $salesMaterialTypes;
 
-    public function __construct(SalesMaterialTypesInterface $salesMaterialTypes)
+    public function __construct(protected SalesMaterialTypesInterface $salesMaterialTypes)
     {
-        $this->salesMaterialTypes = $salesMaterialTypes;
     }
 
     /**

@@ -10,11 +10,9 @@ use Illuminate\Http\Request;
 
 class TreasuriesController extends Controller
 {
-    protected TreasuriesRepositoryInterface $treasuriesRepository;
 
-    public function __construct(TreasuriesRepositoryInterface $treasuriesRepository)
+    public function __construct(protected TreasuriesRepositoryInterface $treasuriesRepository)
     {
-        $this->treasuriesRepository = $treasuriesRepository;
     }
 
     /**

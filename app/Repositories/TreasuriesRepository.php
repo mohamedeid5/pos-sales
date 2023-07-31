@@ -33,9 +33,8 @@ class TreasuriesRepository implements TreasuriesRepositoryInterface
         return redirect()->route('admin.treasuries.index');
     }
 
-    public function showTreasury(Treasury $treasury)
+    public function showTreasury(Treasury $treasury): View
     {
-       // return $treasury->deliveries->toArray();
         return view('admin.treasuries.show', compact('treasury'));
     }
 

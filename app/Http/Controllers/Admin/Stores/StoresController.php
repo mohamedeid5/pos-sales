@@ -12,12 +12,10 @@ use Illuminate\Http\Request;
 class StoresController extends Controller
 {
 
-    protected StoresRepositoryInterface $storesRepository;
 
 
-    public function __construct(StoresRepositoryInterface $storesRepository)
+    public function __construct(protected StoresRepositoryInterface $storesRepository)
     {
-        $this->storesRepository = $storesRepository;
     }
 
     /**

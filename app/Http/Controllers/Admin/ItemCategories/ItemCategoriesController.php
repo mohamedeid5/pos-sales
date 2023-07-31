@@ -12,11 +12,8 @@ use Illuminate\Http\Request;
 class ItemCategoriesController extends Controller
 {
 
-    protected ItemCategoriesRepositoryInterface $itemCategoriesRepository;
-
-    public function __construct(ItemCategoriesRepositoryInterface $itemCategoriesRepository)
+    public function __construct(protected ItemCategoriesRepositoryInterface $itemCategoriesRepository)
     {
-        $this->itemCategoriesRepository = $itemCategoriesRepository;
     }
 
     /**

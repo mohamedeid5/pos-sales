@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AccountTypes\AccountTypesController;
 use App\Http\Controllers\Admin\Auth\LoginController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ItemCards\ItemCardsController;
@@ -55,6 +56,9 @@ Route::group(['prefix'=>'admin', 'as' => 'admin.', 'middleware' => 'auth:admin']
 
     // item-categories routes
     Route::resource('item-cards', ItemCardsController::class);
+
+    // account types routes
+    Route::resource('account-types', AccountTypesController::class);
 });
 
 

@@ -24,82 +24,85 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                      with font-awesome or any other icon font library -->
-                <li class="nav-item">
-                    <a href="{{ route('admin.settings') }}" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
+
+                <li class="nav-item has-treeview {{ openMenu(['admin/settings', 'admin/treasuries']) }}">
+                    <a href="#" class="nav-link {{ request()->is('admin/settings*') || request()->is('admin/treasuries*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
-                            Settings
+                            General Settings
+                            <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('admin.settings') }}" class="nav-link {{ activeUrl('admin/settings*') }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Settings</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{{ route('admin.treasuries.index') }}" class="nav-link {{ activeUrl('admin/treasuries*') }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Treasuries</p>
+                            </a>
+                        </li>
+
+                    </ul>
                 </li>
+
+
+                <li class="nav-item has-treeview {{ openMenu(['admin/sales-material-types*', 'admin/stores*', 'admin/uoms*', 'admin/item-categories*', 'admin/item-cards*']) }} ">
+                    <a href="#" class="nav-link {{ activeUrl(['admin/sales-material-types', 'admin/stores*', 'admin/uoms*', 'admin/item-categories*', 'admin/item-cards*']) }}">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Treasuries Settings
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('admin.sales-material-types.index') }}" class="nav-link {{ activeUrl('admin/sales-material-types*') }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>sales material types</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{{ route('admin.stores.index') }}" class="nav-link {{ activeUrl('admin/stores*') }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>stores</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{{ route('admin.uoms.index') }}" class="nav-link {{ activeUrl('admin/uoms*') }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>uoms</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{{ route('admin.item-categories.index') }}" class="nav-link {{ activeUrl('admin/item-categories*') }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>item categories</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{{ route('admin.item-cards.index') }}" class="nav-link {{ activeUrl('admin/item-cards*') }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>item cards</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+
+
             </ul>
 
 
-            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-            <li class="nav-item">
-                    <a href="{{ route('admin.treasuries.index') }}" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
-                        <p>
-                            Treasuries
-                        </p>
-                    </a>
-                </li>
-            </ul>
-
-            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-            <li class="nav-item">
-                    <a href="{{ route('admin.sales-material-types.index') }}" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
-                        <p>
-                            Sales Material Types
-                        </p>
-                    </a>
-                </li>
-            </ul>
-
-            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                <li class="nav-item">
-                    <a href="{{ route('admin.stores.index') }}" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
-                        <p>
-                            Stores
-                        </p>
-                    </a>
-                </li>
-            </ul>
-
-            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                <li class="nav-item">
-                    <a href="{{ route('admin.uoms.index') }}" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
-                        <p>
-                            Uoms
-                        </p>
-                    </a>
-                </li>
-            </ul>
-
-            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                <li class="nav-item">
-                    <a href="{{ route('admin.item-categories.index') }}" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
-                        <p>
-                            Item Categories
-                        </p>
-                    </a>
-                </li>
-            </ul>
-
-            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                <li class="nav-item">
-                    <a href="{{ route('admin.item-cards.index') }}" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
-                        <p>
-                            Item Cards
-                        </p>
-                    </a>
-                </li>
-            </ul>
 
         </nav>
         <!-- /.sidebar-menu -->

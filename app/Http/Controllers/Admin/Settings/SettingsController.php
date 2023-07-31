@@ -9,11 +9,9 @@ use Illuminate\Http\Request;
 
 class SettingsController extends Controller
 {
-    private SettingsRepository $settingsRepository;
 
-    public function __construct(SettingsRepository $settingsRepository)
+    public function __construct(protected SettingsRepository $settingsRepository)
     {
-        $this->settingsRepository = $settingsRepository;
     }
 
     /**

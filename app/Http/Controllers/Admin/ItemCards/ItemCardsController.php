@@ -11,11 +11,9 @@ use Illuminate\Http\Request;
 class ItemCardsController extends Controller
 {
 
-    protected ItemCardsRepositoryInterface $itemCardsRepository;
 
-    public function __construct(ItemCardsRepositoryInterface $itemCardsRepository)
+    public function __construct(protected ItemCardsRepositoryInterface $itemCardsRepository)
     {
-        $this->itemCardsRepository = $itemCardsRepository;
     }
 
     /**
