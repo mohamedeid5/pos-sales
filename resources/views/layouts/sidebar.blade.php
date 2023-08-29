@@ -51,6 +51,32 @@
                     </ul>
                 </li>
 
+                <li class="nav-item has-treeview {{ openMenu(['admin/account-types*', 'admin/accounts*']) }}">
+                    <a href="#" class="nav-link {{  activeUrl(['admin/account-types*', 'admin/accounts*']) }}">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            accounts
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('admin.account-types.index') }}" class="nav-link {{ activeUrl('admin/account-types*') }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>accounts types</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{{ route('admin.accounts.index') }}" class="nav-link {{ activeUrl('admin/accounts*') }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>accounts </p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+
 
                 <li class="nav-item has-treeview {{ openMenu(['admin/sales-material-types*', 'admin/stores*', 'admin/uoms*', 'admin/item-categories*', 'admin/item-cards*']) }} ">
                     <a href="#" class="nav-link {{ activeUrl(['admin/sales-material-types', 'admin/stores*', 'admin/uoms*', 'admin/item-categories*', 'admin/item-cards*']) }}">

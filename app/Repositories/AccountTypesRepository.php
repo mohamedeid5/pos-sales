@@ -5,6 +5,7 @@ namespace App\Repositories;
 use App\Http\Requests\Admin\AccountTypesRequest;
 use App\Interfaces\AccountTypesRepositoryInterface;
 use App\Models\AccountType;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 
 class AccountTypesRepository implements AccountTypesRepositoryInterface
@@ -12,17 +13,21 @@ class AccountTypesRepository implements AccountTypesRepositoryInterface
 
     public function allAccountTypes(): View
     {
-        return view('admin.account_types');
+        $accountTypes = AccountType::all();
+
+        return view('admin.account_types.index', compact('accountTypes'));
     }
 
-    public function createAccountTypes()
+    public function createAccountTypes(): View
     {
-        // TODO: Implement createAccountTypes() method.
+        return view('admin.account_types.create');
     }
 
-    public function storeAccountTypes(AccountTypesRequest $request)
+    public function storeAccountTypes(AccountTypesRequest $request): RedirectResponse
     {
-        // TODO: Implement storeAccountTypes() method.
+        AccountType::create($request->validated());
+
+        return redirect()->route('admin.account-types.index');
     }
 
     public function showAccountTypes(AccountType $accountType)
@@ -30,18 +35,23 @@ class AccountTypesRepository implements AccountTypesRepositoryInterface
         // TODO: Implement showAccountTypes() method.
     }
 
-    public function editAccountTypes(AccountType $accountType)
+    public function editAccountTypes(AccountType $accountType): View
     {
-        // TODO: Implement editAccountTypes() method.
+        return view('admin.account_types.edit', compact('accountType'));
     }
 
     public function updateAccountTypes(AccountTypesRequest $accountTypesRequest, $id)
     {
-        // TODO: Implement updateAccountTypes() method.
+       $accountType =  AccountType::findOrFail($id);
+       $accountType->update($accountTypesRequest->validated());
+
+        return redirect()->back();
     }
 
-    public function deleteAccountTypes(AccountType $accountType)
+    public function deleteAccountTypes(AccountType $accountType): RedirectResponse
     {
-        // TODO: Implement deleteAccountTypes() method.
+        $accountType->delete();
+
+        return redirect()->route('admin.account-types.index');
     }
 }

@@ -58,6 +58,17 @@ $(document).ready(function(){
     });
 
 
+    $('#is_parent').change(function (){
+        var selectedOption = $('option:selected', this);
+
+       if(selectedOption.val() == 0) {
+           $('#parent_account').show()
+       } else if(selectedOption.val() == 1){
+           $('#parent_account').hide()
+       }
+    });
+
+
 
     // validation
 /*

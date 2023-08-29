@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\Accounts\AccountsController;
 use App\Http\Controllers\Admin\AccountTypes\AccountTypesController;
 use App\Http\Controllers\Admin\Auth\LoginController;
 use App\Http\Controllers\Admin\DashboardController;
@@ -59,6 +60,9 @@ Route::group(['prefix'=>'admin', 'as' => 'admin.', 'middleware' => 'auth:admin']
 
     // account types routes
     Route::resource('account-types', AccountTypesController::class);
+
+    // accounts routes
+    Route::resource('accounts', AccountsController::class);
 });
 
 

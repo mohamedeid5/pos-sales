@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use App\Http\Controllers\Admin\SalesMaterialTypes\SalesMaterialTypesController;
+use App\Interfaces\AccountsRepositoryInterface;
+use App\Interfaces\AccountTypesRepositoryInterface;
 use App\Interfaces\ItemCardsRepositoryInterface;
 use App\Interfaces\ItemCategoriesRepositoryInterface;
 use App\Interfaces\SalesMaterialTypesInterface;
@@ -10,6 +12,8 @@ use App\Interfaces\SettingsRepositoryInterface;
 use App\Interfaces\StoresRepositoryInterface;
 use App\Interfaces\TreasuriesRepositoryInterface;
 use App\Interfaces\UomsRepositoryInterface;
+use App\Repositories\AccountsRepository;
+use App\Repositories\AccountTypesRepository;
 use App\Repositories\ItemCardsRepository;
 use App\Repositories\ItemCategoriesRepository;
 use App\Repositories\SalesMaterialTypesRepository;
@@ -33,6 +37,8 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(UomsRepositoryInterface::class, UomsRepository::class);
         $this->app->bind(ItemCategoriesRepositoryInterface::class, ItemCategoriesRepository::class);
         $this->app->bind(ItemCardsRepositoryInterface::class, ItemCardsRepository::class);
+        $this->app->bind(AccountTypesRepositoryInterface::class, AccountTypesRepository::class);
+        $this->app->bind(AccountsRepositoryInterface::class, AccountsRepository::class);
     }
 
     /**

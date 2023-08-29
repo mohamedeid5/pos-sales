@@ -20,7 +20,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     @include('layouts.sidebar')
 
     <div class="content-wrapper">
-        @include('admin.includes.errors')
+        @include('admin.includes.success')
         @yield('content')
     </div>
 

@@ -31,4 +31,5 @@
 </script>
 
 <script src="{{ Url::asset('assets/js/main.js') }}"></script>
+
 @yield('js')

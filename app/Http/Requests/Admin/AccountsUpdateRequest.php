@@ -4,7 +4,7 @@ namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AccountTypesRequest extends FormRequest
+class AccountsUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -21,10 +21,13 @@ class AccountTypesRequest extends FormRequest
      */
     public function rules(): array
     {
+        $id = request('account_id');
         return [
-            'name' => 'required',
-            'status' => 'required',
-            'related_internal_accounts' => 'required',
+            'name' => 'required|unique:accounts,name,'.$id,
+            'is_parent' => 'required',
+            'account_types_id' => 'required',
+            'parent_account_id' => 'required_if:is_parent,0',
+            'notes' => 'required',
         ];
     }
 }

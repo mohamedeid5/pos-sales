@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin\AccountTypes;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\AccountTypesRequest;
 use App\Interfaces\AccountTypesRepositoryInterface;
+use App\Models\AccountType;
 use Illuminate\Http\Request;
 
 class AccountTypesController extends Controller
@@ -27,15 +29,15 @@ class AccountTypesController extends Controller
      */
     public function create()
     {
-        //
+        return $this->accountTypesRepository->createAccountTypes();
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(AccountTypesRequest $request)
     {
-        //
+        return $this->accountTypesRepository->storeAccountTypes($request);
     }
 
     /**
@@ -49,24 +51,24 @@ class AccountTypesController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(AccountType $accountType)
     {
-        //
+        return $this->accountTypesRepository->editAccountTypes($accountType);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(AccountTypesRequest $request, string $id)
     {
-        //
+        return $this->accountTypesRepository->updateAccountTypes($request, $id);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(AccountType $accountType)
     {
-        //
+        return $this->accountTypesRepository->deleteAccountTypes($accountType);
     }
 }

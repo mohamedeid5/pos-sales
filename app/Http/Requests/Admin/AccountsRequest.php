@@ -4,7 +4,7 @@ namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AccountTypesRequest extends FormRequest
+class AccountsRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,8 +23,12 @@ class AccountTypesRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'status' => 'required',
-            'related_internal_accounts' => 'required',
+            'is_parent' => 'required',
+            'account_types_id' => 'required',
+            'parent_account_id' => 'required_if:is_parent,0',
+            'start_balance_status' => 'required|in:1,2,3',
+            'start_balance' => 'required',
+            'notes' => 'required',
         ];
     }
 }

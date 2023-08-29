@@ -10,4 +10,5 @@
 <link rel="stylesheet" href="{{ URL::asset('assets/css/mycustomstyle.css') }}">
 <link rel="stylesheet" href="{{ URL::asset('assets/css/main.css') }}">
 
+
 @yield('css')
